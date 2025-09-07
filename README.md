@@ -9,7 +9,6 @@ Este é um projeto de **To Do List** desenvolvido em **React**, que permite aos 
 ## Funcionalidades
 
 - **📝 Adicionar Tarefas**: Crie novas tarefas com título e categoria.
-- **✏️ Editar Tarefas**: Atualize o texto ou a categoria de tarefas existentes.
 - **🗑️ Remover Tarefas**: Exclua tarefas desnecessárias.
 - **✅ Marcar como Concluída**: Alterne entre tarefas pendentes e concluídas.
 - **🔍 Pesquisar Tarefas**: Busque tarefas por palavras-chave em tempo real.
@@ -52,9 +51,9 @@ Desenvolvido por [Rafaela Pereira Santos](https://github.com/devrafaela) • bas
 
 ## Screenshots
 
-### Imagem 1
-![To Do List Dia Escuro 1](assets/images/to-do-list-day-dark%20(1).png)
-
-### Imagem 2
+### Imagem 1 - Theme Day
 ![To Do List Dia Escuro 2](assets/images/to-do-list-day-dark%20(2).png)
+
+### Imagem 2 - Theme Night
+![To Do List Dia Escuro 1](assets/images/to-do-list-day-dark%20(1).png)
 
