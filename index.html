@@ -7,10 +7,7 @@
     <meta name="description" content="Lista de tarefas em português" />
     <title>To Do List</title>
 
-
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
-
-    <!-- Fonte Mulish via Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 
     <style>
@@ -19,26 +16,18 @@
         background-color: #f4f4f4;
         min-height: 100vh;
         margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
-
-      .creditos {
-        margin-top: 5px;
-        font-size: 0.9rem;
-        color: #ffffff;
+        padding: 1px 0 0 0;
         text-align: center;
       }
+
+      #root {
+        display: inline-block; /* permite medir a altura exata do conteúdo */
+      }
+
     </style>
   </head>
   <body>
     <div id="root"></div>
-
-    <div class="creditos">
-      <b>Rafaela Pereira Santos</b> • baseado no tutorial de 'Matheus Battisti – Hora de Codar'
-    </div>
 
     <script type="module" src="/src/main.jsx"></script>
   </body>

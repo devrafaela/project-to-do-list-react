@@ -1,71 +1,181 @@
+/* ===== Body e temas ===== */
 body {
   font-family: Mulish, sans-serif;
-  background-color: #f4f4f4;
-  padding: 30px; /* mantido */
   color: #333;
-
-  background-image: url('../assets/images/bg.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; /* mantém preenchendo a tela */
-  image-rendering: auto;  /* melhora a interpolação da imagem */
+  padding: 30px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  transition: all 0.5s ease;
 }
 
+/* Tema Dia */
+body.day {
+  background: radial-gradient(circle, #a0d8f1 0%, #81c7ea 50%, #5cb0e1 100%);
+  color: #333;
+}
 
+/* Tema Noite */
+body.night {
+  background: radial-gradient(circle, #100478 0%, #17095f 50%, #1c023b 100%);
+  color: #fff;
+}
+
+/* ===== Estrelas ===== */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite, float 10s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes float {
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(10px, -10px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Estrela cadente */
+.shooting-star {
+  position: absolute;
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(white, rgba(255,255,255,0));
+  border-radius: 50%;
+  transform: rotate(125deg);
+  animation: shoot 8s linear infinite;
+}
+
+@keyframes shoot {
+  0% {
+    top: -10%;
+    left: 0%;
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+/* ===== Nuvens ===== */
+.cloud {
+  position: absolute;
+  background: rgba(255,255,255,0.8);
+  border-radius: 50%;
+  filter: blur(8px);
+  animation-name: floatCloud;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes floatCloud {
+  0% {
+    transform: translateX(0);
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw);
+    opacity: 0.7;
+  }
+}
+
+/* ===== Container principal ===== */
 .app {
   max-width: 600px;
   margin: 0 auto 300px;
   background-color: #efefef;
   padding: 20px 30px;
   border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.5s ease;
+  text-align: left;
+}
+
+/* Tema Noite: app escuro */
+body.night .app {
+  background-color: #222;
+  color: #fff;
+}
+
+/* ===== Título e botão toggle ===== */
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 h1 {
+  margin: 0;
   text-align: center;
 }
 
-h2 {
+.theme-toggle {
+  background: none;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* ===== Inputs e botões ===== */
+input, select {
+  padding: 5px;
   margin-bottom: 10px;
-}
-
-p {
-  margin: 10px 0;;
-}
-
-input {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  width: 100%;
   box-sizing: border-box;
 }
 
 button {
   background-color: #15abbf;
   color: #fff;
-  border: 5px 10px;
-  margin-right: 10px;
   border: none;
   border-radius: 3px;
+  margin-right: 10px;
+  padding: 5px 10px;
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 button:hover {
   opacity: 1;
-}
-
-.todo-list {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #555;
-}
-
-.todo {
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .complete {
@@ -76,19 +186,36 @@ button:hover {
   background-color: #da3d37;
 }
 
-.todo-form {
-  padding-bottom: 1.5rem;;
+/* ===== Lista de tarefas ===== */
+.todo-list {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #555;
 }
 
-input, 
-select {
-  padding: 5px;
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  width: 100%;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
+body.night .todo {
+  background-color: #333;
+  color: #fff;
+}
+
+.todo-form {
+  padding-bottom: 1.5rem;
+  text-align: left;
+}
+
+/* Filtros e pesquisa */
 .filter, .serch {
   border-bottom: 1px solid #555;
   margin-bottom: 20px;
@@ -97,8 +224,8 @@ select {
 
 .filter-options {
   display: flex;
-  justify-content: space-between;
-  gap: 3rem;
+  justify-content: flex-start;
+  gap: 3.5rem;
 }
 
 .filter-options div {
