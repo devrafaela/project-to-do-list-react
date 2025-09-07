@@ -142,9 +142,14 @@ function App() {
       </div>
 
       {/* Créditos logo abaixo do App */}
-      <div className="creditos" style={{ marginTop: "2px" }}>
-        <b>Rafaela Pereira Santos</b> • baseado no tutorial de 'Matheus Battisti – Hora de Codar'
+      <div className="creditos"> 
+        <b>
+          <a href="https://github.com/devrafaela" target="_blank" rel="noopener noreferrer">
+            Rafaela Pereira Santos
+          </a>
+        </b> • baseado no tutorial de 'Matheus Battisti – Hora de Codar'
       </div>
+
     </>
   );
 }
