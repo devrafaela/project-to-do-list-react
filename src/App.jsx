@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "./App.css"
+import ToDo from "./components/ToDo"
 
 function App() {
   const [todos, setTodos] = useState([
@@ -24,19 +25,7 @@ function App() {
     <h1>Project To Do List</h1>
     <div className="todo-list">
       {todos.map((todo) => (
-        <div className="todo">
-          <div className="content">
-
-            <p>{todo.text}</p>
-            <p className="category"> ({todo.category}) </p>
-
-          <div>
-            <button>Completar</button>
-            <button>X</button>
-          </div>
-
-          </div>
-        </div>
+        <ToDo todo={todo} />
       ))}
     </div>
   </div>
