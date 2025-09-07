@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-const ToDoForm = () => {
+const ToDoForm = ({addTodo}) => {
 
   const [value, setValue] = useState("")
   const [category, setCategory] = useState("")
@@ -10,6 +10,7 @@ const ToDoForm = () => {
 
     if(!value || !category) return;
 
+    addTodo(value, category)
     console.log("Tarefa criada: ", {value, category})
     //adicionar toDo e limpar os campos
     setValue("");
