@@ -52,5 +52,9 @@ Desenvolvido por [Rafaela Pereira Santos](https://github.com/devrafaela) • bas
 
 ## Screenshots
 
-![Screenshot do Aplicativo](link-para-screenshot.png)
+### Imagem 1
+![To Do List Dia Escuro 1](assets/images/to-do-list-day-dark%20(1).png)
+
+### Imagem 2
+![To Do List Dia Escuro 2](assets/images/to-do-list-day-dark%20(2).png)
 
