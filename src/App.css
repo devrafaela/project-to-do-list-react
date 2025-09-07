@@ -1,14 +1,16 @@
 body {
-  font-family: Mulish,;
+  font-family: Mulish, sans-serif;
   background-color: #f4f4f4;
-  padding: 30px;
+  padding: 30px; /* mantido */
   color: #333;
 
-  background-image: url('../assets/images/bg.png');
+  background-image: url('../assets/images/bg.jpg');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; /* mantém preenchendo a tela */
+  image-rendering: auto;  /* melhora a interpolação da imagem */
 }
+
 
 .app {
   max-width: 600px;
